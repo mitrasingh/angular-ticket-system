@@ -13,4 +13,5 @@ type dummyTrafficData = {
 })
 export class TrafficComponent {
   @Input({ required: true }) dummyTrafficData!: dummyTrafficData[];
+  @Input({ required: true }) maxTraffic!: number;
 }
