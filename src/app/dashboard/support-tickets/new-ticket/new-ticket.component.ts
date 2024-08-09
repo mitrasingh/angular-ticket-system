@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { ControlComponent } from '../../../shared/control/control.component';
@@ -11,9 +11,12 @@ import { ControlComponent } from '../../../shared/control/control.component';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent {
+  @Output() add = new EventEmitter<{ title: string; text: string }>();
   titleInput = '';
   requestInput = '';
+
   onSubmit() {
+    this.add.emit({ title: this.titleInput, text: this.requestInput });
     console.log('submitted');
     console.log(this.titleInput);
     console.log(this.requestInput);
