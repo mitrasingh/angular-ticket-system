@@ -11,7 +11,7 @@ import { Ticket } from '../ticket.model';
 export class TicketComponent {
   @Input({ required: true }) data!: Ticket;
   @Input() detailsVisible: boolean = false;
-  @Output() close = new EventEmitter<string>();
+  @Output() close = new EventEmitter();
 
   // detailsVisible = signal(false);
 
