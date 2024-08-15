@@ -17,8 +17,7 @@ export class NewTicketComponent {
 
   onSubmit() {
     this.add.emit({ title: this.titleInput, text: this.requestInput });
-    console.log('submitted');
-    console.log(this.titleInput);
-    console.log(this.requestInput);
+    this.titleInput = '';
+    this.requestInput = '';
   }
 }
